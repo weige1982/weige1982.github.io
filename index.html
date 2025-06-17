@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>大猿人中控系统3.5演示站</title>
+	<meta name="keywords" content="大猿人,大猿人官方,大猿人官网,大猿人中控,大猿人中控官网,大猿人源码,大猿人最新版,大猿人最新版源码,大猿人中控源码,大猿人3.5,大猿人演示,话费充值,话费充值系统,折扣充值,小利,小利源码">
+	<meta name="description" content="大猿人充值中控系统3.5源码演示站，新增同平台产品同步价格、同步上下架、代理端话费余额查询、主控端及代理端批量设置浮动价等功能 @weige1982">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-image: linear-gradient(180deg, #e6e6e6 0%, #d8d8d8100%);
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        #main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .brand {
+            text-align: center;
+            padding: 40px 0;
+            color: #fff;
+            animation: fadeInDown 1s ease;
+        }
+
+        .brand-title {
+            font-size: 3.5em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            background: linear-gradient(180deg, #2af598 0%, #009efd 100%);;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-flag {
+            background: rgba(255,255,255,0.15);
+            color: #009efd;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease;
+            animation-fill-mode: both;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.15);
+        }
+		
+        .card a {
+            color: #009efd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 350;
+        }
+
+        .card a:hover {
+            color: #2af598;
+        }
+
+        .title {
+            color: #009efd;
+            font-size: 1.4em;
+            margin-bottom: 9px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+
+        .title::before {
+            content: "";
+            width: 4px;
+            height: 25px;
+            background: linear-gradient(to bottom, #2af598, #009efd);
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        .tip-item {
+            background: rgba(255,255,255,0.5);
+            padding: 15px;
+            border-radius: 16px;
+            margin: 0px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .browser-tip {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 0;
+            padding: 8px 0;
+            color: #666;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            background-size: contain;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.4s; }
+        .card:nth-child(4) { animation-delay: 0.6s; }
+        .card:nth-child(5) { animation-delay: 0.8s; }
+
+        @media (max-width: 768px) {
+            #main {
+                padding: 15px;
+            }
+
+            .brand-title {
+                font-size: 2.5em;
+            }
+
+        .save-method {
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .save-card {
+            background: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .save-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .save-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .save-method {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>    
+    <div id="main">
+        <div class="brand">
+            <div class="brand-title">大猿人稳定版</div>
+            <span class="brand-flag">诚信经营，童叟无欺！</span>
+        </div>
+		
+        <div class="card">
+            <h4 class="title">稳定版演示站</h4>            
+            <div class="tip-item">
+                <div class="save-method">
+                    <b style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-bookmark" style="color: #009efd;"></i>
+                        中控端后台：
+                    </b>
+                    <p style="color: #666; margin-top: 10px; line-height: 1.8;">
+ 					<a href="https://demo.dyrstable.org/admin.php" target="_blank">https://demo.dyrstable.org/admin.php</a><br>
+					用户账号：大猿人稳定版演示<br>
+					登录密码：TG@weige1982<br><br>
+                    </p>
+                    <b style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-bookmark" style="color: #009efd;"></i>
+                        代理端后台：
+                    </b>
+                    <p style="color: #666; margin-top: 10px; line-height: 1.8;">
+					<a href="https://demo.dyrstable.org/agent.php" target="_blank">https://demo.dyrstable.org/agent.php</a><br>
+					请登录中控端后台自行开户测试！<br><br>
+					已修复市面版本普遍存在的代理端无限加款提权漏洞，请放心使用！<br>
+					仅源码119，含搭建238，嫌贵的可以去买9块9的，一分钱一分货，都是良心价，被其他地方骗了的“回头客”，得加钱！
+					
+                    </p>
+                </div>
+            </div>
+        </div>
+		
+        <div class="card">
+             <h4 class="title">联系我们</h4>
+			 <div class="tip-item">
+				 <div class="save-method">
+					<p style="color: #666; margin-top: 10px; line-height: 1.8;">
+						网站：<a href="https://dyrstable.org" target="_blank">dyrstable.org</a><br>
+						Telegram 唯一客服：<a href="https://t.me/weige1982" target="_blank">@weige1982</a>
+					</p>
+				</div>
+			</div>
+        </div>
+		
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>
